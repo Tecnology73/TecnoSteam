@@ -1,0 +1,215 @@
+body {
+  background-color: #1C2432;
+  color: #FEFEFE;
+}
+
+body > .app-root {
+  height: 100%;
+}
+
+.app-root {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.app-root .ts-nav-bar {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+}
+
+.app-root > .app-container {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 100%;
+          flex: 1 1 100%;
+  overflow: hidden;
+}
+
+.app-root > .app-container > .container {
+  height: 100%;
+  padding: 1em;
+  background-color: rgba(0, 0, 0, 0.05);
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  overflow-y: auto;
+}
+
+.app-root > .app-container > .container .header {
+  position: relative;
+}
+
+.app-root > .app-container > .container .header p {
+  text-align: center;
+  margin: 0;
+  font-size: 1.1em;
+}
+
+.app-root > .app-container > .container .header .submit-suggestion {
+  position: absolute;
+  top: 0.5em;
+  right: 1em;
+  border: 0;
+  background-color: rgba(255, 255, 255, 0.05);
+  color: white;
+  padding: 0.5em 1em;
+}
+
+.app-root > .app-container > .container .header .submit-suggestion:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.app-root > .app-container > .container > .suggestions-group {
+  margin-top: 2em;
+}
+
+.suggestions-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.suggestions-group .suggestion-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  margin-bottom: 1em;
+}
+
+.suggestions-group .suggestion-item .vote-group {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 100px;
+          flex: 0 0 100px;
+  font-size: 1.25em;
+  text-align: center;
+}
+
+.suggestions-group .suggestion-item .vote-group .vote-counter {
+  font-size: 0.9em;
+}
+
+.suggestions-group .suggestion-item .vote-group .vote-up,
+.suggestions-group .suggestion-item .vote-group .vote-down {
+  cursor: pointer;
+  margin: 0.25em;
+}
+
+.suggestions-group .suggestion-item .vote-group .vote-up.self {
+  color: #4CAF50;
+}
+
+.suggestions-group .suggestion-item .vote-group .vote-down.self {
+  color: #F44336;
+}
+
+.suggestions-group .suggestion-item .info-group {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 100%;
+          flex: 1 1 100%;
+  overflow: hidden;
+}
+
+.suggestions-group .suggestion-item .info-group .title {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.suggestions-group .suggestion-item .timestamp {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+  opacity: 0.5;
+  font-size: 0.8em;
+}
+
+.suggestion-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99999;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+}
+
+.suggestion-popup .content {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.suggestion-popup .content form {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 25%;
+          flex: 1 1 25%;
+  min-width: 300px;
+  max-width: 500px;
+}
+
+.suggestion-popup .content form .form-control {
+  color: #111;
+}
+
+.suggestion-popup .content form .requirements {
+  float: right;
+  margin-top: -1em;
+  margin-bottom: 1em;
+  opacity: 0.75;
+}
+
+.suggestion-popup .content form textarea {
+  resize: vertical;
+}
+
+.suggestion-popup .content form .error {
+  font-size: 0.9em;
+  color: #F44336;
+  margin-top: -1em;
+  margin-bottom: 1em;
+}
+
+.suggestion-popup .content form .btn:not(.btn-underline) {
+  background-color: #4CAF50;
+}
+
+.suggestion-popup .content form .btn:not(.btn-underline):hover {
+  background-color: #449d48;
+}
+
+.suggestion-popup .content form .btn-underline {
+  background-color: transparent;
+  border-bottom: solid 2px rgba(255, 255, 255, 0.5);
+  padding: 0.5em;
+  margin: 0 0.5em;
+  text-transform: uppercase;
+  font-size: 0.8em;
+}
+

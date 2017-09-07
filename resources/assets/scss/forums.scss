@@ -1,0 +1,178 @@
+@import 'variables';
+
+body {
+	background-color: $theme-primary;
+	color: $theme-primary-inverse;
+
+	> .app-root {
+		height: 100%;
+	}
+}
+
+.app-root {
+	display: flex;
+	flex-direction: column;
+
+	.ts-nav-bar {
+		flex: 0 0 auto;
+	}
+
+	> .app-container {
+		flex: 1 1 100%;
+		overflow: hidden;
+
+		> .container {
+			height: 100%;
+			padding: 1em;
+			background-color: rgba(0, 0, 0, 0.05);
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+			overflow-y: auto;
+
+			.header {
+				position: relative;
+
+				p {
+					text-align: center;
+					margin: 0;
+					font-size: 1.1em;
+				}
+
+				.submit-suggestion {
+					position: absolute;
+					top: 0.5em;
+					right: 1em;
+					border: 0;
+					background-color: rgba(255, 255, 255, 0.05);
+					color: white;
+					padding: 0.5em 1em;
+
+					&:hover {
+						background-color: rgba(255, 255, 255, 0.1);
+					}
+				}
+			}
+
+			> .suggestions-group {
+				margin-top: 2em;
+			}
+		}
+	}
+}
+
+.suggestions-group {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	flex-wrap: wrap;
+
+	.suggestion-item {
+		display: flex;
+		align-items: center;
+		flex: 1 1 auto;
+		margin-bottom: 1em;
+
+		.vote-group {
+			flex: 0 0 100px;
+			font-size: 1.25em;
+			text-align: center;
+
+			.vote-counter {
+				font-size: 0.9em;
+			}
+
+			.vote-up,
+			.vote-down {
+				cursor: pointer;
+				margin: 0.25em;
+			}
+
+			.vote-up.self {
+				color: #4CAF50;
+			}
+
+			.vote-down.self {
+				color: #F44336;
+			}
+		}
+
+		.info-group {
+			flex: 1 1 100%;
+			overflow: hidden;
+
+			.title {
+				font-size: 1.5em;
+				font-weight: bold;
+			}
+		}
+
+		.timestamp {
+			flex: 0 0 auto;
+			opacity: 0.5;
+			font-size: 0.8em;
+		}
+	}
+}
+
+.suggestion-popup {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 99999;
+	background-color: rgba(0, 0, 0, 0.5);
+	display: none;
+
+	.content {
+		width: 100%;
+		height: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		form {
+			flex: 1 1 25%;
+			min-width: 300px;
+			max-width: 500px;
+
+			.form-control {
+				color: #111;
+			}
+
+			.requirements {
+				float: right;
+				margin-top: -1em;
+				margin-bottom: 1em;
+				opacity: 0.75;
+			}
+
+			textarea {
+				resize: vertical;
+			}
+
+			.error {
+				font-size: 0.9em;
+				color: #F44336;
+				margin-top: -1em;
+				margin-bottom: 1em;
+			}
+
+			.btn:not(.btn-underline) {
+				background-color: #4CAF50;
+
+				&:hover {
+					background-color: darken(#4CAF50, 5%);
+				}
+			}
+
+			.btn-underline {
+				background-color: transparent;
+				border-bottom: solid 2px rgba(255, 255, 255, 0.5);
+				padding: 0.5em;
+				margin: 0 0.5em;
+				text-transform: uppercase;
+				font-size: 0.8em;
+			}
+		}
+	}
+}

@@ -1,0 +1,47 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i');
+// Variables
+@import 'variables';
+// Framework
+@import 'framework';
+
+html {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 0.9rem;
+	font-weight: 300;
+	letter-spacing: 0.025rem;
+	box-sizing: border-box;
+	cursor: default;
+}
+
+html,
+body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	color: $color;
+	background-color: $back-color;
+}
+
+*,
+::after,
+::before {
+	box-sizing: inherit;
+	cursor: inherit;
+	user-select: none;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+.home-container {
+	text-align: center;
+
+	p > a {
+		cursor: pointer;
+	}
+}
