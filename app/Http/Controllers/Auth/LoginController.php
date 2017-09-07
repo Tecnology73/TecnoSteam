@@ -40,9 +40,9 @@ class LoginController extends Controller
 			'countrycode' => $steam_user->user['loccountrycode'],
 		]);
 
-		//$token = $user->createToken('Token')->accessToken;
+		/*$token = $user->createToken('Token')->accessToken;
 
-		/*dispatch((new Summary($user->id, $user->steamid64))->onQueue('veryhigh'));
+		dispatch((new Summary($user->id, $user->steamid64))->onQueue('veryhigh'));
 		dispatch((new UserLibrary($user))->onQueue('veryhigh')->delay(Carbon::now()->addSecond()));
 		dispatch((new Friends($user))->onQueue('veryhigh')->delay(Carbon::now()->addSeconds(2)));*/
 

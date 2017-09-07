@@ -13,7 +13,7 @@
 
 Route::get('/', 'HomeController@index')->name('home');
 
-Route::group(['prefix' => 'forums'], function () {
+Route::group(['prefix' => 'forums', 'middleware' => 'auth'], function () {
 	Route::get('/', 'ForumController@index')->name('forums.home');
 	Route::post('/', 'ForumController@suggest');
 

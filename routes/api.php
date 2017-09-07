@@ -1,6 +1,6 @@
 <?php
 
-/*Route::group(['middleware' => 'auth:api'], function () {
+Route::group(['middleware' => 'auth:api'], function () {
 	Route::group(['prefix' => 'library'], function () {
 		Route::get('/', 'Api\User\LibraryController@list');
 	});
@@ -17,4 +17,4 @@
 		Route::get('achievements', 'Api\User\GameController@achievements');
 		Route::get('news', 'Api\User\GameController@news');
 	});
-});*/
+});
