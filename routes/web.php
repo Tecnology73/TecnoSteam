@@ -11,6 +11,10 @@
 |
 */
 
+/*Route::get('test', function() {
+	return \Auth::user()->createToken('app')->accessToken;
+});*/
+
 Route::get('/', 'HomeController@index')->name('home');
 
 Route::group(['prefix' => 'forums', 'middleware' => 'auth'], function () {
